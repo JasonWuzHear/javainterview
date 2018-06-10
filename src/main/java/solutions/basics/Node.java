@@ -1,6 +1,10 @@
 package solutions.basics;
 
 public class Node {
-    Object data;
-    Node next;
+    public Object data;
+    public Node next;
+
+    public Node(Object item) {
+        data = item;
+    }
 }
