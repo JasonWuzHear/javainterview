@@ -10,6 +10,6 @@ public class MyQueue {
     }
 
     public Object pull() {
-
+        return new Object();
     }
 }
