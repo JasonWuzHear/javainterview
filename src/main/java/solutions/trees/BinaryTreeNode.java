@@ -1,5 +1,8 @@
 package solutions.trees;
 
+import solutions.linkedlist.LinkedListNode;
+import java.util.ArrayList;
+
 public class BinaryTreeNode {
     int data;
     BinaryTreeNode left;
@@ -57,6 +60,31 @@ public class BinaryTreeNode {
 
     public boolean isBalanced() {
         return (maxDepth() - minDepth() < 2);
+    }
+
+    public static BinaryTreeNode createFromSortedArray(int[] sortedArray) {
+        return createFromSortedArray(sortedArray, 0, sortedArray.length - 1);
+    }
+    static BinaryTreeNode createFromSortedArray(int[] sortedArray, int start, int end) {
+        if (end < start) return null;
+
+        int mid = end - start;
+        BinaryTreeNode n = new BinaryTreeNode(sortedArray[mid]);
+        n.left = createFromSortedArray(sortedArray, start, mid - 1);
+        n.right = createFromSortedArray(sortedArray, mid + 1, end);
+        return n;
+    }
+
+    public LinkedListNode[] convertLevelsToLinkedLists() {
+        LinkedListNode[] lists = new LinkedListNode[maxDepth()];
+        return convertLevelsToLinkedLists(0, lists);
+    }
+    public LinkedListNode[] convertLevelsToLinkedLists(int depth, LinkedListNode[] lists) {
+        if (lists[depth] == null) lists[depth] = new LinkedListNode(data);
+        else lists[depth].append(data);
+        if (left != null) left.convertLevelsToLinkedLists(depth + 1, lists);
+        if (right != null) right.convertLevelsToLinkedLists(depth + 1, lists);
+        return lists;
     }
     
     
