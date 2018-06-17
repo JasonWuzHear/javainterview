@@ -1,0 +1,28 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "CrackingCodeInterview",
+                "projectName": "CrackingCodeInterview",
+                "workingDirectory": "c:\\Users\\jason\\Documents\\Projects\\CrackingCodeInterview",
+                "args": [],
+                "vmargs": [],
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "CrackingCodeInterview",
+                "projectName": "CrackingCodeInterview",
+                "workingDirectory": "c:\\Users\\jason\\Documents\\Projects\\CrackingCodeInterview",
+                "args": [],
+                "vmargs": [],
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
